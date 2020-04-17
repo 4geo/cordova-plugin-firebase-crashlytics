@@ -35,7 +35,7 @@
       </feature>
     </config-file>
 
-    <preference name="ANDROID_FIREBASE_ANALYTICS_VERSION" default="17.2.1"/>
+    <preference name="ANDROID_FIREBASE_ANALYTICS_VERSION" default="15.+"/>
     <framework src="com.google.firebase:firebase-analytics:$ANDROID_FIREBASE_ANALYTICS_VERSION"/>
     <framework src="firebase-crashlytics.gradle" custom="true" type="gradleReference"/>
 
@@ -65,21 +65,16 @@
       </feature>
     </config-file>
 
-    <podspec>
-      <config>
-        <source url="https://github.com/CocoaPods/Specs.git"/>
-      </config>
-      <pods use-frameworks="true">
-        <pod name="Fabric" specs="~> 1.10.2"/>
-        <pod name="Crashlytics" specs="~> 3.14.0" />
-        <pod name="Firebase/Analytics" />
-      </pods>
-    </podspec>
-
     <header-file src="src/ios/FirebaseCrashlyticsPlugin.h"/>
     <source-file src="src/ios/FirebaseCrashlyticsPlugin.m"/>
     <header-file src="src/ios/AppDelegate+FirebaseCrashlyticsPlugin.h"/>
     <source-file src="src/ios/AppDelegate+FirebaseCrashlyticsPlugin.m"/>
+    <pods-config ios-min-version="9.0">
+      <source url="https://github.com/CocoaPods/Specs.git"/>
+    </pods-config>
+
+    <pod name="Firebase/Crashlytics"/>
+    <pod name="Firebase/Analytics" spec="~> 6.22.0"/>
   </platform>
 
 </plugin>

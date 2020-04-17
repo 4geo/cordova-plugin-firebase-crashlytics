@@ -1,6 +1,5 @@
 #import "AppDelegate+FirebaseCrashlyticsPlugin.h"
 #import "FirebaseCrashlyticsPlugin.h"
-@import Fabric;
 #import <objc/runtime.h>
 
 @implementation AppDelegate (FirebaseCrashlyticsPlugin)
